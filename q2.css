@@ -1,0 +1,67 @@
+body {
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 1rem;
+}
+
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 30rem;
+  height: 300px;
+  margin: 0 auto;
+  background-size: 100% 50px;
+  background-position: left top;
+  padding: 0;
+  margin: 3rem 1rem;
+}
+.chart li {
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 200px;
+  padding: 0 1rem;
+}
+.chart span {
+  display: block;
+  background: rgba(104, 116, 122, 0.75);
+  animation: draw 1s ease-in-out;
+  width: 50%;
+  margin-left: 1.7rem;
+}
+.chart .unmarked-value {
+  display: block;
+  background: white;
+  animation: draw 1s ease-in-out;
+}
+
+.chart span:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 5px 1em 0;
+  display: block;
+  text-align: center;
+  content: attr(title);
+  word-wrap: break-word;
+  margin-top: 1rem;
+}
+
+@keyframes draw {
+  0% {
+    height: 0;
+  }
+}
